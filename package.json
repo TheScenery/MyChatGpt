@@ -3,6 +3,7 @@
   "displayName": "MyChatGpt",
   "description": "ChaptGPT written by ChatGpt",
   "version": "0.0.1",
+  "publisher": "TheScenery",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -14,10 +15,10 @@
   "contributes": {
     "commands": [
       {
-        "command": "mychatgpt.helloWorld",
-        "title": "Hello World"
+          "command": "extension.myChatGPT",
+          "title": "Generate a conversation using GPT-3"
       }
-    ]
+  ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
