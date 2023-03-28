@@ -17,6 +17,31 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from MyChatGpt!');
+
+		const panel = vscode.window.createWebviewPanel(
+			'myChatGPT',
+			'My ChatGPT',
+			vscode.ViewColumn.Two,
+			{
+			  enableScripts: true,
+			  retainContextWhenHidden: true
+			}
+		  );
+
+		  panel.webview.html = `
+			<!DOCTYPE html>
+			<html lang="en">
+				<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>MyChatGPT</title>
+				</head>
+				<body>
+				<div id="app"></div>
+				<div>这是个自定义的界面</div>
+				</body>
+			</html>
+			`;
 	});
 
 	context.subscriptions.push(disposable);
