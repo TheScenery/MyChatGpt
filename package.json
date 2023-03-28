@@ -15,8 +15,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.myChatGPT",
-        "title": "Generate a conversation using GPT-3"
+        "command": "startMyChatGpt",
+        "title": "Start my chatGpt"
       }
     ]
   },
