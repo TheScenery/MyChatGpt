@@ -20,6 +20,17 @@
       }
     ]
   },
+  "configuration": {
+    "type": "object",
+    "title": "MyChatGpt",
+    "properties": {
+      "openaiApiKey": {
+        "type": "string",
+        "default": "",
+        "description": "OpenAI API Key"
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
@@ -49,7 +60,6 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "openai": "^3.2.1",
-    "socket.io-client": "^4.6.1"
+    "axios": "^1.3.4"
   }
 }
