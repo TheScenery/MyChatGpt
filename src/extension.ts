@@ -25,11 +25,10 @@ export function activate(context: vscode.ExtensionContext) {
       let config = vscode.workspace.getConfiguration("mychatgpt");
       const openaiApiKey = config.get("openaiApiKey");
 
-	  if (!openaiApiKey) {
-		vscode.window.showErrorMessage('can not find api key');
-		return;
-	  }
-
+      if (!openaiApiKey) {
+        vscode.window.showErrorMessage("can not find api key");
+        return;
+      }
 
       try {
         const response = await axios.post(
@@ -48,8 +47,11 @@ export function activate(context: vscode.ExtensionContext) {
         );
         const answer = response.data.choices[0].text;
         vscode.window.showInformationMessage(answer);
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        let message;
+        if (error instanceof Error) message = error.message;
+        else message = String(error);
+        vscode.window.showErrorMessage(message);
       }
     }
   );
