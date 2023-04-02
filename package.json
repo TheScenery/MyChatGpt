@@ -19,16 +19,16 @@
         "command": "startMyChatGpt",
         "title": "Start my chatGpt"
       }
-    ]
-  },
-  "configuration": {
-    "type": "object",
-    "title": "MyChatGpt",
-    "properties": {
-      "openaiApiKey": {
-        "type": "string",
-        "default": "",
-        "description": "OpenAI API Key"
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "MyChatGpt",
+      "properties": {
+        "mychatgpt.openaiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key"
+        }
       }
     }
   },

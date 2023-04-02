@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import axios from "axios";
+import { Cipher } from "crypto";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -21,8 +22,14 @@ export function activate(context: vscode.ExtensionContext) {
         value: "",
       });
 
-      let config = vscode.workspace.getConfiguration("startMyChatGpt");
+      let config = vscode.workspace.getConfiguration("mychatgpt");
       const openaiApiKey = config.get("openaiApiKey");
+
+	  if (!openaiApiKey) {
+		vscode.window.showErrorMessage('can not find api key');
+		return;
+	  }
+
 
       try {
         const response = await axios.post(
